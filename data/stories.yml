@@ -1,0 +1,67 @@
+version: "2.0"
+
+stories:
+
+- story: easypath
+  steps:
+    - intent: saluto
+    - action: utter_greet
+    - intent: capo
+    - action: action_search
+    - intent: accetta
+    - action: action_accetta
+    - action: utter_goodbye
+
+- story: modifyacpt
+  steps:
+    - intent: saluto
+    - action: utter_greet
+    - intent: capo
+    - action: action_search
+    - intent: modifica
+    - action: action_modify
+    - intent: accetta
+    - action: action_accetta
+    - action: utter_goodbye
+
+
+- story: modifyrft
+  steps:
+    - intent: saluto
+    - action: utter_greet
+    - intent: capo
+    - action: action_search
+    - intent: modifica
+    - action: action_modify
+    - intent: rifiuta
+    - action: utter_rifiuta
+    - action: utter_goodbye
+
+- story: doublemodacpt
+  steps:
+    - intent: saluto
+    - action: utter_greet
+    - intent: capo
+    - action: action_search
+    - intent: modifica
+    - action: action_modify
+    - intent: modifica
+    - action: action_modify
+    - intent: accetta
+    - action: action_accetta
+    - action: utter_goodbye
+
+- story: doublemodrft
+  steps:
+    - intent: saluto
+    - action: utter_greet
+    - intent: capo
+    - action: action_search
+    - intent: modifica
+    - action: action_modify
+    - intent: modifica
+    - action: action_modify
+    - intent: rifiuta
+    - action: utter_rifiuta
+    - action: utter_goodbye
+
