@@ -1,0 +1,97 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+  - saluto
+  - modifica
+  - capo
+  - accetta
+  - rifiuta
+  - out_of_scope
+entities:
+  - attributes
+  - category
+  - spot
+
+slots:
+  category:
+    type: categorical
+    influence_conversation: yes
+    values:
+    - giacca a vento
+    - blazer
+    - bomber
+    - cardigan
+    - abito
+    - maglione
+    - maglietta
+    - jeans
+    - canottiera
+    - giacca
+    - giubbotto
+    - top
+    - gonna
+    - leggins
+    - pantaloncini
+    - kimono
+    - culotte
+    - tuta
+    - felpa
+    - flanella
+    - camicetta
+    - pantaloni chinos
+
+  attributes:
+    type: list
+    influence_conversation: yes
+
+  spot:
+    type: categorical
+    influence_conversation: true
+    values:
+    - primo
+    - secondo
+    - terzo
+
+  query1:
+    type: any
+
+  query2:
+    type: any
+
+  query3:
+    type: any
+
+  querymod:
+    type: list
+
+  mod:
+    type: bool
+    initial_value: False
+
+
+responses:
+  utter_greet:
+    - text: Ciao! Sono Totembot
+    - text: Hey, Sono Totembot
+  utter_rifiuta:
+    - text: Mi dispiace non averti aiutato, a presto!
+    - text: Purtroppo non posso fare altro, mi dispiace!
+  utter_goodbye:
+    - text: Ok, a presto!
+    - text: Ci vediamo!
+    - text: Hasta la vista, baby!
+  utter_out_of_scope:
+    - text: Mi dispiace, non posso aiutarti per questo
+    - text: Non so come aiutarti
+
+actions:
+  - action_modify
+  - action_search
+  - action_accetta
+  - action_rifiuta
+  - utter_goodbye
+  - utter_greet
+  - utter_out_of_scope
+  - utter_rifiuta
