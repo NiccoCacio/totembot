@@ -54,7 +54,7 @@ def checkatt(attlist):
         elif attlist[i] == "embroidered":
             attlist[i] = "ricamato"
         elif attlist[i] == "pleated":
-            attlist[i] = "pieghetto"
+            attlist[i] = "pieghettato"
         elif attlist[i] == "solid":
             attlist[i] = "tinta unita"
         elif attlist[i] == "long_sleeve":
