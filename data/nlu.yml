@@ -1,0 +1,228 @@
+version: "2.0"
+nlu:
+
+- intent: out_of_scope
+  examples: |
+    - vorrei ordinare del cibo
+    - che tempo fa oggi
+    - quanto è finita la partita di calcio
+    - dammi le notizie di oggi
+    - cerco un benzinaio
+    - vorrei sapere il risultato delle ultime elezioni politiche
+    - come stai
+    - voglio un panino
+
+- intent: saluto
+  examples: |
+    - hey
+    - ei
+    - ciao
+    - buongiorno
+    - salve
+    - buonasera
+    - puoi aiutarmi?
+    - buonpomeriggio
+    - accenditi
+    - aiutami
+    - sei acceso?
+
+- intent: capo
+  examples: |
+    - vorrei qualcosa di [convenzionale](attributes)
+    - cerco qualcosa in [denim](attributes)
+    - vorrei qualcosa in [denim](attributes)
+    - sto cercando qualcosa in [denim](attributes)
+    - sai dirmi dove posso trovare qualcosa di [floreale](attributes)
+    - sai dirmi dove trovare qualcosa in [denim](attributes
+    - vorrei qualcosa di [attillato](attributes)
+    - vorrei qualcosa di [floreale](attributes)
+    - vorrei un capo [largo](attributes)
+    - cerco qualcosa di [floreale](attributes) e [attillato](attributes)
+    - sto cercando un [maglione](category) [stampato](attributes) [largo](attributes)
+    - vorrei una [maglia](category)
+    - vorrei dei [jeans](category) [stretto]{"entity": "attributes", "value": "attillati"}
+    - sai dirmi dove posso trovare un [giubbotto](category)?
+    - sto cercando una [giacca a vento](category) [a righe](attributes)
+    - vorrei una [gonna](category) in [lattice](attributes)
+    - sai dirmi dove posso trovare dei [leggins](category) [stampati](attributes)?
+    - sto cercando una [giacca](category) [smanicato](attributes)
+    - sai dirmi dove posso trovare un [top](category) di [pelle](attributes)?
+    - cerco una [felpa](category) a [tinta unita](attributes)
+    - puoi aiutarmi a trovare una [camicetta](category) [corta](attributes)
+    - sto cercando qualcosa di [stretto]{"entity": "attributes", "value": "attillato"} e [stampato](attributes)
+    - vorrei un [jeans](category) [attillato](attributes)
+    - pensavo a qualcosa di [smanicato](attributes)
+    - cosa hai a [maniche lunghe](attributes)
+    - fammi vedere qualcosa di [floreale](attributes)
+    - mostrami dei [top](category)
+    - mostrami dei [top](category) [attillati](attributes)
+    - sai trovarmi qualcosa di [smanicato](attributes)
+    - cosa puoi farmi vedere a [maniche corte](attributes)
+    - dove trovo una [giacca](category) [attillata](attributes)
+    - hai una [canottiera](category) di [cotone](attributes)
+    - proponimi delle [giacche a vento](category) [convenzionali](attributes)
+    - cerco una [camicetta](category) di [stoffa](attributes) [attillata](attributes)
+    - cerco una [gonna](category) [corta](attributes)
+    - cerco un [maglione](category) [a maglia](attributes)
+    - fammi vedere un [maglione](category) [largo](attributes)
+    - mostrami che [maglietta](category) hai
+    - mostrami dei [jeans](category)
+    - mostrami qualcosa di [attillato](attributes)
+    - mostrami che hai di [attillato](attributes)
+
+- intent: modifica
+  examples: |
+    - il [primo](spot) lo vorrei di [stoffa](attributes)
+    - il [secondo](spot) lo vorrei con [girocollo](attributes)
+    - c'è anche più [corto](attributes) di così?
+    - hai qualcosa di [convenzionale](attributes) e [largo](attributes) invece?
+    - non mi fa impazzire, hai qualcosa di più [corto](attributes)?
+    - il [secondo](spot) è carino ma lo vorrei più [stretto](attributes)
+    - il [primo](spot) è carino ma lo vorrei col [collo a v](attributes)
+    - cosa hai di [stampato](attributes)
+    - cosa hai di [floreale](attributes)
+    - il [secondo](spot) [top](category) c'è anche [largo](attributes)
+    - il [primo](spot) c'è anche [attillato](attributes)
+    - non mi piace troppo, hai qualcosa di più [convenzionale](attributes)?
+    - vorrei qualcosa di diverso
+    - non mi piacciono, ne hai altri?
+    - nessuno dei due mi convince, hai altre opzioni?
+    - nessuno dei due mi piace, fammi vedere altro
+    - non mi piacciono, prova di nuovo
+    - non mi convincono vorrei vedere altri capi
+    - non mi piace, fammi vedere altre ipotesi
+    - ne vorrei un'altra
+    - fammene vedere un'altra
+    - preferirei vederne un'altra
+    - non lo so
+    - il [primo](spot) mi piace, lo vorrei più [attillato](attributes)
+    - sai se il [secondo](spot) c'è anche più [largo](attributes)
+    - vorrei il [terzo](spot) ma a [maniche corte](attributes)
+    - ne hai altri simili
+    - ne hai altri [stampato](attributes)
+    - non lo so, ne hai altri
+    - puoi farmene vedere altri
+    - puoi farmene vedere di [attillato](attributes)
+    - vorrei vederne [stampati](attributes)
+    - ne hai qualcuno diverso
+    - ne hai uno a [maniche corte](attributes)
+    - mostrami  altri capi [smanicati](attributes)
+    - nessuno dei tre mi piace, riprova
+    - fammi vedere altri [top](category)
+
+
+- intent: accetta
+  examples: |
+    - mi piace il [primo](spot) elemento, dove lo trovo?
+    - il [primo](spot) dove posso trovarlo?
+    - mi piace la [prima](spot) maglia
+    - il [due](spot) va bene
+    - il [secondo](spot) jeans
+    - il [primo](spot)
+    - perfetto, la [prima](spot) mi piace
+    - ok mi piace il [primo](spot)
+    - dimmi dove posso trovare il [terzo](spot)
+    - perfetto! dammi il [secondo](spot)
+    - mi piacciono i [primi](spot)
+    - mi piace! dove lo trovo il [secondo](spot)
+    - il [terzo](spot) mi piace
+    - mi piace il [terzo](spot) giubbotto
+    - dimmi dove trovare il [terzo](spot)
+    - ho scelto il [terzo](spot)
+    - bello il [terzo](spot)
+    - voglio il [secondo](spot)
+    - voglio il [primo](spot)
+    - la [terza](spot) mi piace
+    - la [seconda](spot) mi piace
+    - la [prima](spot) mi piace
+    - il [primo](spot) è quello che cercavo
+    - il [secondo](spot) è quello che volevo
+    - il [terzo](spot) è quello che cercavo
+    - il [primo](spot) fa al caso mio
+    - figo il [secondo](spot) dove lo trovo?
+    - figo il [primo](spot)
+    - bello il [terzo](spot) dove lo trovo?
+    - il [primo](spot) fa al caso mio
+    - il [secondo](spot) mi piace molto
+    - il [primo](spot) mi piace un sacco
+    - il [terzo](spot) è come lo volevo io
+    - il [terzo](spot) mi starebbe bene dove lo trovo?
+
+
+
+- intent: rifiuta
+  examples: |
+    - non mi interessano
+    - basta così
+    - quello che cerco non è fra le opzioni
+    - non mi piace niente
+    - non è quello che cercavo
+    - non fanno per me
+    - mi sono stancato
+    - non mi servi piu
+    - non ho piu tempo
+    - mi sono rotto
+    - non ne posso più
+    - adesso basta
+    - fine
+
+- synonym: attillato
+  examples: |
+    - stretto
+    - attillati
+    - attillata
+    - attillate
+    - stretti
+    - stretta
+    - strette
+
+- synonym: pantaloncini
+  examples: |
+    - bermuda
+
+- synonym: maglietta
+  examples: |
+    - t-shirt
+
+- synonym: pantaloni
+  examples: |
+    - pantalone
+
+- synonym: primo
+  examples: |
+    - uno
+    - primi
+    - sinistra
+    - prima
+
+- synonym: secondo
+  examples: |
+    - due
+    - secondi
+    - seconda
+    - centrale
+
+- synonym: terzo
+  examples: |
+    - tre
+    - terzi
+    - destra
+    - terza
+
+- synonym: stampato
+  examples: |
+    - stampati
+    - stampata
+    - stampate
+
+- synonym: corto
+  examples: |
+    - corta
+    - corti
+    - corte
+
+- synonym: smanicato
+  examples: |
+    - smanicati
+    - smanicata
+    - smanicato
